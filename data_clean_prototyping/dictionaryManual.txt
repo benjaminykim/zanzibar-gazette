@@ -1,4 +1,4 @@
-﻿Additional dictionary words:
+Additional dictionary words:
 
 
 Masai
@@ -75,16 +75,18 @@ ns as
 Kugulu Rugulu
 Kibwczi Kibwezi
 Timi time
-He be
 Bis his
 Ire are
 cvery every
 Uiion upon
 Emit Emin 
-With ##th
 Angelo Banguelo
 
 
 Clashing letters:
 **h’s and b’s
 **e’s and c’s
+
+UNSURE (BEN):
+He be
+With ##th
