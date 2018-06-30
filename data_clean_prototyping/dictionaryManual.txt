@@ -1,0 +1,90 @@
+﻿Additional dictionary words:
+
+
+Masai
+Sime
+Simes
+Senenge
+Wakikuyu
+Kikuyu
+Waniake
+Dagoreti
+Rugulu
+Rugulus
+Kibwezi
+Uganda
+Machakos
+Kavirondo
+Kwa
+Sundu
+Baringo
+Congo
+Zanzibar
+Manyuema
+Manyemas
+Emin Pasha
+Kampala
+Kitunzi
+Kavalli
+Masamboni
+Vali
+Mahdists
+Zululand
+Dinizulu
+Dinizulus
+Gunguhana
+Tharia
+Khoja
+Musabhai
+Mlindi
+Burgash
+Bargash
+Hadramant
+Tanganyika
+Kimanga
+Tehambesi
+Banguelo
+More
+Lukuga
+Luapala
+Lusambo
+Zambezi
+Nyassa
+Dahomeyan
+Baghirmi
+Oubanghi
+Nachtigal
+Dogone
+Talati
+
+
+
+
+Autocorrect corrections:
+a #
+a ;
+a “
+a ,
+a ’
+A <empty space or column line>
+J<empty space or column line>
+i <empty space or column line>
+
+
+ns as
+Kugulu Rugulu
+Kibwczi Kibwezi
+Timi time
+He be
+Bis his
+Ire are
+cvery every
+Uiion upon
+Emit Emin 
+With ##th
+Angelo Banguelo
+
+
+Clashing letters:
+**h’s and b’s
+**e’s and c’s
