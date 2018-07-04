@@ -1,0 +1,11 @@
+README.rst
+autocorrect/__init__.py
+autocorrect/nlp_parser.py
+autocorrect/utils.py
+autocorrect/word.py
+autocorrect/word_lists.py
+autocorrect/words.bz2
+autocorrect.egg-info/PKG-INFO
+autocorrect.egg-info/SOURCES.txt
+autocorrect.egg-info/dependency_links.txt
+autocorrect.egg-info/top_level.txt
