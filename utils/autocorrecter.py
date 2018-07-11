@@ -1,12 +1,14 @@
 import re
 import sys
+import os
 from autocorrect import spell
 
 corrections = {}
 revisions = 0
 
 def load_dictionary():
-    dictionary = open("dictionary.txt", 'r')
+    cur_dir = os.getcwd()
+    dictionary = open(cur_dir + "/utils/dictionary.txt", 'r')
     for line in dictionary:
         pair = line.split()
         corrections[pair[0]] = pair[1]
