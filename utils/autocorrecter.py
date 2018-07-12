@@ -6,9 +6,8 @@ from autocorrect import spell
 corrections = {}
 revisions = 0
 
-def load_dictionary():
-    cur_dir = os.getcwd()
-    dictionary = open(cur_dir + "/utils/dictionary.txt", 'r')
+def load_dictionary(dir):
+    dictionary = open(dir, 'r')
     for line in dictionary:
         pair = line.split()
         corrections[pair[0]] = pair[1]
@@ -16,7 +15,9 @@ def load_dictionary():
 def arguments(args):
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("files", type=str, default=None, nargs="+", help="files to process, no extension as .txt assumed")
+    parser.add_argument("-f", dest="files", type=str, default=None, help="files to process .txt assumed")
+    parser.add_argument("-d", dest="dictionary", type=str, default="/dictionary.txt", help="filepath of dictionary")
+    parser.add_argument("--dir", dest="data_dir", type=str, default="/data", help="filepath of data directory")
     args = parser.parse_args(args=args)
     return args
 
@@ -24,6 +25,33 @@ def main(args=None):
     process_files(arguments(args))
 
 def process_files(args):
+    # assign all parsed arguments
+    files = None
+    dict_dir = args.dictionary
+    data_dir = args.data_dir
+
+    if not files:
+        files = []
+        for file in os.listdir(data_dir):
+            if file.endswith(".txt"):
+                files.append(file)
+
+    # load dictionary
+    load_dictionary(dict_dir)
+
+    # set up directories for data storage
+    revised_dir = data_dir + "/revised"
+    revised_log_dir = data_dir + "/log"
+
+    # create revised txt file directory
+    if not os.path.exists(revised_dir):
+        os.makedirs(revised_dir)
+
+    # create revised log txt file directory
+    if not os.path.exists(revised_log_dir):
+        os.makedirs(revised_log_dir)
+
+    # helper function to write to appropriate files
     def write(word, revision, outputFile, revisedLog):
         global revisions
         if word != revision:
@@ -33,10 +61,12 @@ def process_files(args):
         else:
             outputFile.write(word + " ")
 
-    for fileName in args.files:
-        inputFile = open(fileName + '.txt', 'r')
-        outputFile = open(fileName + 'Revised.txt', 'w')
-        revisedLog = open(fileName + 'RevisedLog.txt', 'w')
+    # process all text data in files
+    for fileName in files:
+        fileName = fileName[:-4]
+        inputFile = open(data_dir + "/" + fileName + '.txt', 'r')
+        outputFile = open(revised_dir + "/" + fileName + 'Revised.txt', 'w')
+        revisedLog = open(revised_log_dir + "/" + fileName + 'Log.txt', 'w')
 
         revisedLog.write("revised   word\n")
         cache = ""
@@ -98,5 +128,4 @@ def spell_check(word):
 
 
 if __name__ == '__main__':
-    load_dictionary()
     sys.exit(main())
